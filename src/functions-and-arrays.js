@@ -46,16 +46,21 @@ console.log(total)*/
 
 // Bonus - Iteration #3.2: A generic sum() function
 function sum(arr) {
+  if(arr.length === 0) {
+    return 0
+  }
+
   let total = 0;
   for (let i = 0; i < arr.length; i++) {
     if(arr[i] === 'number') { //if number sum the numbers
       total = arr[i] + sum
     }
-    //if()  //if string sum the letter. (length)
-    //if()  // if boolean sum the 1 for true 0 for false?? 
-   
-  
-    total += arr.length[i] 
+    if(arr[i] === 'string') {
+      total =+ arr[i].length 
+    }
+    /*if(typeof arr[i] === 'boolean') {
+      total = 
+    }*/  
   }
   return total;
 }
@@ -67,7 +72,15 @@ console.log(sum(mixedArr));
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
 function avarageNumbers(array) {
-  return sumNumbers(array)/ array.length //using the function above
+  if(array.length === 0) {
+    return null;
+   }
+
+  let sum = 0
+  for(let i = 0; i < array.length; i++) {
+    sum = sum + array[i]; 
+  }
+  return sum / array.length
 }
 
 
@@ -75,6 +88,9 @@ function avarageNumbers(array) {
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
 function averageWordLength(array) {
+  if(array.length === 0) {
+    return null
+   }
   let word = 0
   for(let i = 0; i < array.length; i++) {
     word = word + array[i].length
