@@ -52,17 +52,17 @@ function sum(arr) {
 
   let total = 0;
   for (let i = 0; i < arr.length; i++) {
-    if(arr[i] === 'number') { //if number sum the numbers
-      total = arr[i] + sum
+    if(arr[i] === 'number') {
+      total += arr[i] + sum
     }
     if(arr[i] === 'string') {
-      total =+ arr[i].length 
+      total += arr[i].length 
     }
-    /*if(typeof arr[i] === 'boolean') {
-      total = 
-    }*/  
+    if(arr[i] === 'boolean') {
+      total += arr[i] ? 1 : 0;
+    }
   }
-  return total;
+  return total
 }
 console.log(sum(mixedArr));
 
@@ -118,22 +118,36 @@ const wordsUnique = [
 ];
 
 function uniquifyArray(arr) {
-  let uniqueWord = []//why not 0?
-  for(let i = 0; i < arr.length; i++) {
-    if(uniqueWord.indexOf(arr[i] === -1)) {
-      uniqueWord.push(arr[i])
+  if (arr.length === 0) {
+    return null;
+  }
+  let uniqueWords = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (uniqueWords.indexOf(arr[i]) === -1) {
+      uniqueWords.push(arr[i]);
     }
   }
-  return uniqueWord
+  return uniqueWords;
 }
-console.log(uniquifyArray(wordsUnique))
+
+//console.log(uniquifyArray(wordsUnique))
 
 
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(array, word) {
+  if (array.length === 0) {
+    return null;
+  }
+  for(let i = 0; i < array.length; i++) {
+    if(array[i] === word) {
+      return true
+    } 
+  }
+  return false
+}
 
 
 
@@ -152,7 +166,15 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(array, word) {
+  let count = 0;
+  for(let i = 0; i < array.length; i++) {
+    if(array[i] === word) {
+      count++;
+    }
+  }
+  return count;
+}
 
 
 
