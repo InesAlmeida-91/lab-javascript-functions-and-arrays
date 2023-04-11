@@ -49,16 +49,15 @@ function sum(arr) {
   if(arr.length === 0) {
     return 0
   }
-
   let total = 0;
   for (let i = 0; i < arr.length; i++) {
-    if(arr[i] === 'number') {
-      total += arr[i] + sum
+    if(typeof arr[i] === 'number') {
+      total += arr[i]
     }
-    if(arr[i] === 'string') {
+    if(typeof arr[i] === 'string') {
       total += arr[i].length 
     }
-    if(arr[i] === 'boolean') {
+    if(typeof arr[i] === 'boolean') {
       total += arr[i] ? 1 : 0;
     }
   }
@@ -99,8 +98,25 @@ function averageWordLength(array) {
  }
  console.log(averageWordLength(wordsArr));
 
-// Bonus - Iteration #4.1
-
+// Bonus - Iteration #4.3: A generic avg() function
+function avg(arr) {
+  if(arr.length === 0) {
+    return null
+  }
+  let total = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if(typeof arr[i] === 'number') {
+      total += arr[i]
+    }
+    if(typeof arr[i] === 'string') {
+      total += arr[i].length 
+    }
+    if(typeof arr[i] === 'boolean') {
+      total += arr[i] ? 1 : 0;
+    }
+  }
+  return total /arr.length
+}
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -129,7 +145,6 @@ function uniquifyArray(arr) {
   }
   return uniqueWords;
 }
-
 //console.log(uniquifyArray(wordsUnique))
 
 
@@ -148,7 +163,6 @@ function doesWordExist(array, word) {
   }
   return false
 }
-
 
 
 // Iteration #7: Count repetition
@@ -202,7 +216,11 @@ const matrix = [
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
 
-function greatestProduct() {}
+function greatestProduct(matrix) {
+ /*let maxProduct = 0;
+  const rows = matrix.length;
+  const columns =*/
+}
 
 
 
