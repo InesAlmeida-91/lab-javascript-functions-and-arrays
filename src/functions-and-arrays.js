@@ -219,7 +219,7 @@ const matrix = [
 function greatestProduct(matrix) {
  /*let maxProduct = 0;
   const rows = matrix.length;
-  const columns = matrix[0].length
+  const columns = matrix[0].length - access to all columns
   
   check the vertical result
   check the horizontal result
